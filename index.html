@@ -1,0 +1,1486 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AutoTech | Taller & Repuestos</title>
+
+    <!-- Conexión con nuestro CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- MENÚ PRINCIPAL -->
+    <header>
+        <nav>
+            <h1>AutoTech</h1>
+
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#repuestos">Repuestos</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+
+            <button type="button" id="btnLogin">Iniciar Sesión</button>
+        </nav>
+    </header>
+
+    <!-- PORTADA -->
+    <main>
+        <section id="inicio">
+            <h2>Bienvenido a AutoTech</h2>
+
+            <h3>Tu vehículo en las mejores manos</h3>
+
+            <p>
+                Servicio de mantenimiento automotriz,
+                reparación mecánica y venta de repuestos.
+            </p>
+
+            <button id="btnAgendar">Agendar Cita</button>
+        </section>
+
+        <!-- SERVICIOS -->
+        <section id="servicios">
+            <h2>Nuestros Servicios</h2>
+
+            <article>
+                <h3>Cambio de Aceite</h3>
+                <p>Mantenimiento preventivo del motor.</p>
+            </article>
+
+            <article>
+                <h3>Sistema de Frenos</h3>
+                <p>Revisión y mantenimiento de frenos.</p>
+            </article>
+
+            <article>
+                <h3>Diagnóstico Automotriz</h3>
+                <p>Detección de fallas mecánicas.</p>
+            </article>
+        </section>
+
+        <!-- REPUESTOS -->
+        <section id="repuestos">
+            <h2>Tienda de Repuestos</h2>
+
+            <p>
+                Encuentra repuestos para diferentes
+                marcas y modelos de vehículos.
+            </p>
+        </section>
+
+        <!-- CONTACTO -->
+        <section id="contacto">
+            <h2>Contáctanos</h2>
+            <p>Ubicación: Quito, Ecuador</p>
+        </section>
+    </main>
+
+    <!-- PIE DE PÁGINA -->
+    <footer>
+        <p>
+            © 2026 AutoTech - Taller & Repuestos
+        </p>
+    </footer>
+
+<!-- ==========================================
+     VENTANA DE INICIO DE SESIÓN
+========================================== -->
+<div id="modalLogin" class="modal-autotech oculto"
+     role="dialog" aria-modal="true"
+     aria-labelledby="tituloLogin">
+
+    <div class="modal-caja">
+
+        <button type="button" class="cerrar-modal"
+                id="cerrarLogin" aria-label="Cerrar">
+            &times;
+        </button>
+
+        <div class="modal-logo">
+            <h2>AUTO<span>TECH</span></h2>
+            <p>TALLER & REPUESTOS</p>
+        </div>
+
+        <h3 id="tituloLogin">Bienvenido de nuevo</h3>
+        <p class="modal-descripcion">
+            Inicia sesión para acceder a tu cuenta.
+        </p>
+
+        <form id="formLogin" novalidate>
+
+            <div class="campo-formulario">
+                <label for="loginCorreo">
+                    Correo electrónico
+                </label>
+                <input type="email"
+                       id="loginCorreo"
+                       placeholder="ejemplo@correo.com"
+                       autocomplete="username"
+                       required>
+            </div>
+
+            <div class="campo-formulario">
+                <label for="loginClave">
+                    Contraseña
+                </label>
+                <input type="password"
+                       id="loginClave"
+                       placeholder="Ingresa tu contraseña"
+                       autocomplete="current-password"
+                       required>
+            </div>
+
+            <p id="mensajeLogin" class="mensaje-error"
+               role="alert"></p>
+
+            <button type="submit"
+                    class="boton-formulario">
+                INICIAR SESIÓN
+            </button>
+
+        </form>
+
+        <div class="modal-pie">
+            <p>¿No tienes una cuenta?</p>
+            <button type="button" id="abrirRegistro">
+                Regístrate aquí
+            </button>
+        </div>
+
+    </div>
+</div>
+
+
+<!-- ==========================================
+     VENTANA DE REGISTRO DE CLIENTES
+========================================== -->
+<div id="modalRegistro" class="modal-autotech oculto"
+     role="dialog" aria-modal="true"
+     aria-labelledby="tituloRegistro">
+
+    <div class="modal-caja">
+
+        <button type="button" class="cerrar-modal"
+                id="cerrarRegistro" aria-label="Cerrar">
+            &times;
+        </button>
+
+        <div class="modal-logo">
+            <h2>AUTO<span>TECH</span></h2>
+            <p>CREAR CUENTA</p>
+        </div>
+
+        <h3 id="tituloRegistro">Registro de cliente</h3>
+        <p class="modal-descripcion">
+            Completa tus datos para crear una cuenta.
+        </p>
+
+        <form id="formRegistro" novalidate>
+
+            <div class="campo-formulario">
+                <label for="registroNombre">
+                    Nombre completo
+                </label>
+                <input type="text"
+                       id="registroNombre"
+                       placeholder="Ejemplo: Juan Pérez"
+                       autocomplete="name"
+                       required>
+            </div>
+
+            <div class="campo-formulario">
+                <label for="registroTelefono">
+                    Teléfono
+                </label>
+                <input type="tel"
+                       id="registroTelefono"
+                       placeholder="Ejemplo: 0999999999"
+                       maxlength="10"
+                       autocomplete="tel"
+                       required>
+            </div>
+
+            <div class="campo-formulario">
+                <label for="registroCorreo">
+                    Correo electrónico
+                </label>
+                <input type="email"
+                       id="registroCorreo"
+                       placeholder="ejemplo@correo.com"
+                       autocomplete="email"
+                       required>
+            </div>
+
+            <div class="campo-formulario">
+                <label for="registroClave">
+                    Contraseña
+                </label>
+                <input type="password"
+                       id="registroClave"
+                       placeholder="Mínimo 8 caracteres"
+                       autocomplete="new-password"
+                       required>
+            </div>
+
+            <div class="campo-formulario">
+                <label for="confirmarClave">
+                    Confirmar contraseña
+                </label>
+                <input type="password"
+                       id="confirmarClave"
+                       placeholder="Repite tu contraseña"
+                       autocomplete="new-password"
+                       required>
+            </div>
+
+            <p id="mensajeRegistro" class="mensaje-error"
+               role="alert"></p>
+
+            <button type="submit"
+                    class="boton-formulario">
+                CREAR CUENTA
+            </button>
+
+        </form>
+
+        <div class="modal-pie">
+            <p>¿Ya tienes una cuenta?</p>
+            <button type="button" id="volverLogin">
+                Iniciar sesión
+            </button>
+        </div>
+
+    </div>
+</div>
+
+
+<!-- ==========================================
+     VISTA TEMPORAL DESPUÉS DEL LOGIN
+========================================== -->
+<div id="vistaBienvenida" class="pantalla-bienvenida oculto">
+
+    <div class="bienvenida-caja">
+
+        <div class="modal-logo">
+            <h2>AUTO<span>TECH</span></h2>
+        </div>
+
+        <h2 id="tituloBienvenida"></h2>
+
+        <p id="textoBienvenida"></p>
+
+        <div id="opcionesBienvenida"
+             class="opciones-bienvenida"></div>
+
+        <button id="btnCerrarSesion"
+                class="boton-formulario"
+                type="button">
+            CERRAR SESIÓN
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- ==========================================
+     PASO 4 - PANEL DEL CLIENTE
+========================================== -->
+<div id="panelCliente" class="panel-cliente oculto">
+
+    <!-- BARRA SUPERIOR -->
+    <div class="cliente-header">
+        <div class="cliente-marca">
+            AUTO<span>TECH</span>
+            <small>PANEL DEL CLIENTE</small>
+        </div>
+
+        <button type="button" id="cerrarSesionCliente"
+                class="btn-salir-cliente">
+            Cerrar sesión
+        </button>
+    </div>
+
+    <div class="cliente-layout">
+
+        <!-- MENÚ LATERAL -->
+        <aside class="cliente-sidebar">
+
+            <h3>MI CUENTA</h3>
+
+            <button type="button"
+                    class="cliente-menu-btn activo"
+                    data-vista="clientePerfil">
+                👤 Mi perfil
+            </button>
+
+            <button type="button"
+                    class="cliente-menu-btn"
+                    data-vista="clienteAgendar">
+                📅 Agendar cita
+            </button>
+
+            <button type="button"
+                    class="cliente-menu-btn"
+                    data-vista="clienteMantenimientos">
+                🔧 Mis mantenimientos
+            </button>
+
+            <button type="button"
+                    class="cliente-menu-btn"
+                    data-vista="clienteRepuestos">
+                🛒 Repuestos
+            </button>
+
+
+            <button type="button"
+                    class="cliente-menu-btn"
+                    data-vista="clienteCarrito">
+                🛒 Mi carrito
+            </button>
+
+            <button type="button"
+                    class="cliente-menu-btn"
+                    data-vista="clientePedidos">
+                📦 Mis pedidos
+            </button>
+
+
+        </aside>
+
+        <!-- CONTENIDO -->
+        <main class="cliente-contenido">
+
+            <!-- ==================================
+                 MI PERFIL
+            =================================== -->
+            <section id="clientePerfil" class="cliente-vista">
+
+                <div class="cliente-titulo">
+                    <span>MI CUENTA</span>
+                    <h2>Mi perfil</h2>
+                    <p>
+                        Consulta la información de tu cuenta AutoTech.
+                    </p>
+                </div>
+
+                <div class="cliente-tarjeta">
+
+                    <h3>Información personal</h3>
+
+                    <div class="cliente-datos-grid">
+
+                        <div class="cliente-dato">
+                            <label>Nombre completo</label>
+                            <p id="clienteNombre">-</p>
+                        </div>
+
+                        <div class="cliente-dato">
+                            <label>Correo electrónico</label>
+                            <p id="clienteCorreo">-</p>
+                        </div>
+
+                        <div class="cliente-dato">
+                            <label>Teléfono</label>
+                            <p id="clienteTelefono">-</p>
+                        </div>
+
+                        <div class="cliente-dato">
+                            <label>Tipo de cuenta</label>
+                            <p>Cliente</p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="cliente-tarjeta cliente-acceso-rapido">
+
+                    <h3>¿Qué deseas hacer?</h3>
+
+                    <p>
+                        Agenda un mantenimiento para tu vehículo
+                        de forma rápida y sencilla.
+                    </p>
+
+                    <button type="button"
+                            id="accesoRapidoCita"
+                            class="btn-cliente-amarillo">
+                        + Agendar nueva cita
+                    </button>
+
+                </div>
+
+            </section>
+
+
+            <!-- ==================================
+                 AGENDAR CITA
+            =================================== -->
+            <section id="clienteAgendar"
+                     class="cliente-vista oculto">
+
+                <div class="cliente-titulo">
+                    <span>SERVICIOS AUTOMOTRICES</span>
+                    <h2>Agendar cita mecánica</h2>
+                    <p>
+                        Completa la información para solicitar
+                        el mantenimiento de tu vehículo.
+                    </p>
+                </div>
+
+                <form id="formCitaCliente" novalidate>
+
+                    <!-- DATOS DEL CLIENTE -->
+                    <div class="cliente-tarjeta">
+
+                        <h3>1. Datos de contacto</h3>
+
+                        <div class="cliente-form-grid">
+
+                            <div class="cliente-campo">
+                                <label for="citaNombre">
+                                    Nombre completo *
+                                </label>
+                                <input type="text"
+                                       id="citaNombre"
+                                       required>
+                            </div>
+
+                            <div class="cliente-campo">
+                                <label for="citaCorreo">
+                                    Correo electrónico *
+                                </label>
+                                <input type="email"
+                                       id="citaCorreo"
+                                       required>
+                            </div>
+
+                            <div class="cliente-campo">
+                                <label for="citaTelefono">
+                                    Teléfono *
+                                </label>
+                                <input type="tel"
+                                       id="citaTelefono"
+                                       maxlength="10"
+                                       placeholder="0999999999"
+                                       required>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- DATOS DEL VEHÍCULO -->
+                    <div class="cliente-tarjeta">
+
+                        <h3>2. Información del vehículo</h3>
+
+                        <div class="cliente-form-grid">
+
+                            <div class="cliente-campo">
+                                <label for="citaPlaca">
+                                    Placa del vehículo *
+                                </label>
+                                <input type="text"
+                                       id="citaPlaca"
+                                       placeholder="ABC-1234"
+                                       maxlength="8"
+                                       required>
+                            </div>
+
+                            <div class="cliente-campo">
+                                <label for="citaMarca">
+                                    Marca *
+                                </label>
+                                <select id="citaMarca" required>
+                                    <option value="">
+                                        Seleccionar marca
+                                    </option>
+                                    <option>Chevrolet</option>
+                                    <option>Toyota</option>
+                                    <option>Hyundai</option>
+                                    <option>Kia</option>
+                                    <option>Nissan</option>
+                                    <option>Mazda</option>
+                                    <option>Ford</option>
+                                    <option>Volkswagen</option>
+                                    <option>Otra</option>
+                                </select>
+                            </div>
+
+                            <div class="cliente-campo">
+                                <label for="citaModelo">
+                                    Modelo *
+                                </label>
+                                <input type="text"
+                                       id="citaModelo"
+                                       placeholder="Ej: Aveo"
+                                       required>
+                            </div>
+
+                            <div class="cliente-campo">
+                                <label for="citaAnio">
+                                    Año del vehículo *
+                                </label>
+                                <input type="number"
+                                       id="citaAnio"
+                                       min="1950"
+                                       max="2027"
+                                       required>
+                            </div>
+
+                            <div class="cliente-campo">
+                                <label for="citaKilometraje">
+                                    Kilometraje *
+                                </label>
+                                <input type="number"
+                                       id="citaKilometraje"
+                                       placeholder="Ej: 45000"
+                                       min="0"
+                                       required>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- DETALLES DEL SERVICIO -->
+                    <div class="cliente-tarjeta">
+
+                        <h3>3. Detalles del mantenimiento</h3>
+
+                        <div class="cliente-form-grid">
+
+                            <div class="cliente-campo">
+                                <label for="citaServicio">
+                                    Tipo de servicio *
+                                </label>
+
+                                <select id="citaServicio" required>
+                                    <option value="">
+                                        Seleccionar servicio
+                                    </option>
+                                    <option>Cambio de aceite</option>
+                                    <option>Sistema de frenos</option>
+                                    <option>Mantenimiento de motor</option>
+                                    <option>Diagnóstico electrónico</option>
+                                    <option>Suspensión</option>
+                                    <option>Aire acondicionado</option>
+                                    <option>Mantenimiento general</option>
+                                </select>
+                            </div>
+
+                            <div class="cliente-campo">
+                                <label for="citaFecha">
+                                    Fecha de atención *
+                                </label>
+                                <input type="date"
+                                       id="citaFecha"
+                                       required>
+                            </div>
+
+                            <div class="cliente-campo">
+                                <label for="citaHora">
+                                    Hora de atención *
+                                </label>
+                                <input type="time"
+                                       id="citaHora"
+                                       min="08:00"
+                                       max="18:00"
+                                       step="1800"
+                                       required>
+                            </div>
+
+                        </div>
+
+                        <div class="cliente-opciones">
+
+                            <label>Prioridad de atención</label>
+
+                            <div class="cliente-opcion">
+                                <input type="radio"
+                                       id="prioridadNormal"
+                                       name="prioridadCita"
+                                       value="Normal"
+                                       checked>
+                                <label for="prioridadNormal">
+                                    Normal
+                                </label>
+                            </div>
+
+                            <div class="cliente-opcion">
+                                <input type="radio"
+                                       id="prioridadUrgente"
+                                       name="prioridadCita"
+                                       value="Urgente">
+                                <label for="prioridadUrgente">
+                                    Urgente
+                                </label>
+                            </div>
+
+                        </div>
+
+                        <div class="cliente-opciones">
+
+                            <label>Revisiones adicionales</label>
+
+                            <div class="cliente-opcion">
+                                <input type="checkbox"
+                                       id="revisionFrenos"
+                                       value="Frenos">
+                                <label for="revisionFrenos">
+                                    Revisar frenos
+                                </label>
+                            </div>
+
+                            <div class="cliente-opcion">
+                                <input type="checkbox"
+                                       id="revisionLlantas"
+                                       value="Llantas">
+                                <label for="revisionLlantas">
+                                    Revisar llantas
+                                </label>
+                            </div>
+
+                            <div class="cliente-opcion">
+                                <input type="checkbox"
+                                       id="revisionBateria"
+                                       value="Batería">
+                                <label for="revisionBateria">
+                                    Revisar batería
+                                </label>
+                            </div>
+
+                        </div>
+
+                        <div class="cliente-campo">
+                            <label for="citaDescripcion">
+                                Descripción del problema *
+                            </label>
+
+                            <textarea id="citaDescripcion"
+                                      rows="4"
+                                      placeholder="Describe la falla o mantenimiento requerido..."
+                                      required></textarea>
+                        </div>
+
+                        <p id="mensajeCita"
+                           class="cliente-error"
+                           role="alert"></p>
+
+                        <button type="submit"
+                                class="btn-cliente-amarillo">
+                            REGISTRAR SOLICITUD
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </section>
+
+
+            <!-- ==================================
+                 MIS MANTENIMIENTOS
+            =================================== -->
+            <section id="clienteMantenimientos"
+                     class="cliente-vista oculto">
+
+                <div class="cliente-titulo">
+                    <span>HISTORIAL</span>
+                    <h2>Mis mantenimientos</h2>
+                    <p>
+                        Revisa tus citas y su estado de atención.
+                    </p>
+                </div>
+
+                <div class="cliente-tarjeta">
+                    <div class="cliente-tabla-contenedor">
+
+                        <table class="cliente-tabla">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Vehículo</th>
+                                    <th>Placa</th>
+                                    <th>Servicio</th>
+                                    <th>Fecha</th>
+                                    <th>Estado</th>
+                                </tr>
+                            </thead>
+
+                            <tbody id="tablaCitasCliente">
+                            </tbody>
+
+                        </table>
+
+                    </div>
+                </div>
+
+            </section>
+
+
+            <!-- ==================================
+                 REPUESTOS
+            =================================== -->
+            
+<!-- ==========================================
+     PASO 4.2 - CATÁLOGO DE REPUESTOS
+========================================== -->
+<section id="clienteRepuestos"
+         class="cliente-vista oculto">
+
+    <div class="cliente-titulo">
+        <span>TIENDA AUTOTECH</span>
+        <h2>Catálogo de repuestos</h2>
+        <p>
+            Selecciona los repuestos que necesita tu vehículo.
+        </p>
+    </div>
+
+    <div class="tienda-barra">
+
+        <input type="search"
+               id="buscarRepuesto"
+               placeholder="Buscar repuesto o categoría..."
+               aria-label="Buscar repuestos">
+
+        <button type="button"
+                id="abrirCarrito"
+                class="btn-cliente-amarillo">
+            🛒 Mi carrito
+            (<span id="contadorCarrito">0</span>)
+        </button>
+
+    </div>
+
+    <!-- Productos generados por JavaScript -->
+    <div id="catalogoRepuestos" class="repuestos-grid"></div>
+
+</section>
+
+
+<!-- ==========================================
+     PASO 4.2 - CARRITO DE COMPRAS
+========================================== -->
+<section id="clienteCarrito"
+         class="cliente-vista oculto">
+
+    <div class="cliente-titulo">
+        <span>MI COMPRA</span>
+        <h2>Carrito de compras</h2>
+        <p>
+            Revisa tus productos antes de confirmar el pedido.
+        </p>
+    </div>
+
+    <div class="cliente-tarjeta">
+
+        <div class="cliente-tabla-contenedor">
+
+            <table class="cliente-tabla">
+                <thead>
+                    <tr>
+                        <th>Producto</th>
+                        <th>Precio</th>
+                        <th>Cantidad</th>
+                        <th>Subtotal</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+
+                <tbody id="tablaCarrito"></tbody>
+
+            </table>
+
+        </div>
+
+        <div class="carrito-resumen">
+            <h3>
+                Total: $<span id="totalCarrito">0.00</span>
+            </h3>
+
+            <button type="button"
+                    id="confirmarPedido"
+                    class="btn-cliente-amarillo">
+                CONFIRMAR PEDIDO
+            </button>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==========================================
+     PASO 4.2 - MIS PEDIDOS
+========================================== -->
+<section id="clientePedidos"
+         class="cliente-vista oculto">
+
+    <div class="cliente-titulo">
+        <span>HISTORIAL DE COMPRAS</span>
+        <h2>Mis pedidos</h2>
+        <p>
+            Consulta los repuestos solicitados y el
+            estado de cada pedido.
+        </p>
+    </div>
+
+    <div class="cliente-tarjeta">
+
+        <div class="cliente-tabla-contenedor">
+
+            <table class="cliente-tabla">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Fecha</th>
+                        <th>Productos</th>
+                        <th>Total</th>
+                        <th>Estado</th>
+                    </tr>
+                </thead>
+
+                <tbody id="tablaPedidosCliente"></tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+        </main>
+
+    </div>
+
+</div>
+
+
+
+<!-- ==========================================
+     PASO 5 - PANEL DEL ADMINISTRADOR
+========================================== -->
+<div id="panelAdministrador" class="panel-admin oculto">
+
+    <!-- BARRA SUPERIOR -->
+    <div class="admin-header">
+
+        <div class="admin-marca">
+            AUTO<span>TECH</span>
+            <small>PANEL DE ADMINISTRACIÓN</small>
+        </div>
+
+        <div class="admin-header-derecha">
+            <span id="nombreAdministrador"></span>
+
+            <button type="button"
+                    id="cerrarSesionAdministrador"
+                    class="btn-admin-salir">
+                Cerrar sesión
+            </button>
+        </div>
+
+    </div>
+
+    <div class="admin-layout">
+
+        <!-- MENÚ LATERAL -->
+        <aside class="admin-sidebar">
+
+            <h3>ADMINISTRACIÓN</h3>
+
+            <button type="button"
+                    class="admin-menu-btn activo"
+                    data-admin-vista="adminDashboard">
+                📊 Dashboard
+            </button>
+
+            <button type="button"
+                    class="admin-menu-btn"
+                    data-admin-vista="adminMantenimientos">
+                🔧 Mantenimientos
+            </button>
+
+            <button type="button"
+                    class="admin-menu-btn"
+                    data-admin-vista="adminInventario">
+                📦 Inventario
+            </button>
+
+            <button type="button"
+                    class="admin-menu-btn"
+                    data-admin-vista="adminPedidos">
+                🛒 Pedidos
+            </button>
+
+            <button type="button"
+                    class="admin-menu-btn"
+                    data-admin-vista="adminAuditoria">
+                📋 Auditoría
+            </button>
+
+        </aside>
+
+        <!-- CONTENIDO ADMINISTRATIVO -->
+        <main class="admin-contenido">
+
+            <!-- ==================================
+                 DASHBOARD
+            =================================== -->
+            <section id="adminDashboard" class="admin-vista">
+
+                <div class="admin-titulo">
+                    <span>PANEL DE CONTROL</span>
+                    <h2>Dashboard general</h2>
+                    <p>
+                        Resumen de las operaciones de AutoTech.
+                    </p>
+                </div>
+
+                <div class="admin-estadisticas">
+
+                    <article class="admin-stat">
+                        <div class="stat-icono">👥</div>
+                        <p>Clientes registrados</p>
+                        <h3 id="adminTotalClientes">0</h3>
+                    </article>
+
+                    <article class="admin-stat">
+                        <div class="stat-icono">🔧</div>
+                        <p>Mantenimientos</p>
+                        <h3 id="adminTotalCitas">0</h3>
+                    </article>
+
+                    <article class="admin-stat">
+                        <div class="stat-icono">📦</div>
+                        <p>Repuestos</p>
+                        <h3 id="adminTotalRepuestos">0</h3>
+                    </article>
+
+                    <article class="admin-stat">
+                        <div class="stat-icono">🛒</div>
+                        <p>Pedidos</p>
+                        <h3 id="adminTotalPedidos">0</h3>
+                    </article>
+
+                </div>
+
+                <div class="admin-tarjeta">
+
+                    <h3>Resumen de solicitudes</h3>
+
+                    <div class="admin-resumen">
+
+                        <div>
+                            <span>Pendientes</span>
+                            <strong id="adminCitasPendientes">0</strong>
+                        </div>
+
+                        <div>
+                            <span>En proceso</span>
+                            <strong id="adminCitasProceso">0</strong>
+                        </div>
+
+                        <div>
+                            <span>Finalizadas</span>
+                            <strong id="adminCitasFinalizadas">0</strong>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- ==================================
+                 CRUD DE MANTENIMIENTOS
+            =================================== -->
+            <section id="adminMantenimientos"
+                     class="admin-vista oculto">
+
+                <div class="admin-titulo">
+                    <span>GESTIÓN DE SERVICIOS</span>
+                    <h2>Solicitudes de mantenimiento</h2>
+                    <p>
+                        Administra las citas mecánicas
+                        registradas por los clientes.
+                    </p>
+                </div>
+
+                <!-- FORMULARIO DE MANTENIMIENTO -->
+                <div class="admin-tarjeta">
+
+                    <h3 id="tituloFormularioMantenimiento">
+                        Registrar mantenimiento
+                    </h3>
+
+                    <form id="formAdminMantenimiento" novalidate>
+
+                        <input type="hidden"
+                               id="adminCitaId">
+
+                        <div class="admin-form-grid">
+
+                            <div class="admin-campo">
+                                <label for="adminCitaCliente">
+                                    Cliente *
+                                </label>
+
+                                <select id="adminCitaCliente" required>
+                                    <option value="">
+                                        Seleccionar cliente
+                                    </option>
+                                </select>
+                            </div>
+
+                            <div class="admin-campo">
+                                <label for="adminCitaPlaca">
+                                    Placa *
+                                </label>
+
+                                <input type="text"
+                                       id="adminCitaPlaca"
+                                       placeholder="ABC-1234"
+                                       maxlength="8"
+                                       required>
+                            </div>
+
+                            <div class="admin-campo">
+                                <label for="adminCitaMarca">
+                                    Marca *
+                                </label>
+
+                                <input type="text"
+                                       id="adminCitaMarca"
+                                       placeholder="Ej: Chevrolet"
+                                       required>
+                            </div>
+
+                            <div class="admin-campo">
+                                <label for="adminCitaModelo">
+                                    Modelo *
+                                </label>
+
+                                <input type="text"
+                                       id="adminCitaModelo"
+                                       placeholder="Ej: Aveo"
+                                       required>
+                            </div>
+
+                            <div class="admin-campo">
+                                <label for="adminCitaAnio">
+                                    Año *
+                                </label>
+
+                                <input type="number"
+                                       id="adminCitaAnio"
+                                       min="1950"
+                                       max="2027"
+                                       required>
+                            </div>
+
+                            <div class="admin-campo">
+                                <label for="adminCitaKilometraje">
+                                    Kilometraje *
+                                </label>
+
+                                <input type="number"
+                                       id="adminCitaKilometraje"
+                                       min="0"
+                                       step="1"
+                                       required>
+                            </div>
+
+                            <div class="admin-campo">
+                                <label for="adminCitaServicio">
+                                    Tipo de servicio *
+                                </label>
+
+                                <select id="adminCitaServicio" required>
+                                    <option value="">
+                                        Seleccionar servicio
+                                    </option>
+                                    <option>Cambio de aceite</option>
+                                    <option>Sistema de frenos</option>
+                                    <option>Mantenimiento de motor</option>
+                                    <option>Diagnóstico electrónico</option>
+                                    <option>Suspensión</option>
+                                    <option>Aire acondicionado</option>
+                                    <option>Mantenimiento general</option>
+                                </select>
+                            </div>
+
+                            <div class="admin-campo">
+                                <label for="adminCitaFecha">
+                                    Fecha *
+                                </label>
+
+                                <input type="date"
+                                       id="adminCitaFecha"
+                                       required>
+                            </div>
+
+                            <div class="admin-campo">
+                                <label for="adminCitaHora">
+                                    Hora *
+                                </label>
+
+                                <select id="adminCitaHora" required>
+                                    <option value="">Seleccionar</option>
+                                    <option value="08:00">08:00 AM</option>
+                                    <option value="08:30">08:30 AM</option>
+                                    <option value="09:00">09:00 AM</option>
+                                    <option value="09:30">09:30 AM</option>
+                                    <option value="10:00">10:00 AM</option>
+                                    <option value="10:30">10:30 AM</option>
+                                    <option value="11:00">11:00 AM</option>
+                                    <option value="11:30">11:30 AM</option>
+                                    <option value="12:00">12:00 PM</option>
+                                    <option value="12:30">12:30 PM</option>
+                                    <option value="13:00">01:00 PM</option>
+                                    <option value="13:30">01:30 PM</option>
+                                    <option value="14:00">02:00 PM</option>
+                                    <option value="14:30">02:30 PM</option>
+                                    <option value="15:00">03:00 PM</option>
+                                    <option value="15:30">03:30 PM</option>
+                                    <option value="16:00">04:00 PM</option>
+                                    <option value="16:30">04:30 PM</option>
+                                    <option value="17:00">05:00 PM</option>
+                                    <option value="17:30">05:30 PM</option>
+                                </select>
+                            </div>
+
+                            <div class="admin-campo">
+                                <label for="adminCitaEstado">
+                                    Estado *
+                                </label>
+
+                                <select id="adminCitaEstado" required>
+                                    <option>Pendiente</option>
+                                    <option>En revisión</option>
+                                    <option>En proceso</option>
+                                    <option>Finalizado</option>
+                                    <option>Cancelado</option>
+                                </select>
+                            </div>
+
+                        </div>
+
+                        <div class="admin-campo">
+                            <label for="adminCitaDescripcion">
+                                Descripción del problema *
+                            </label>
+
+                            <textarea id="adminCitaDescripcion"
+                                      rows="3"
+                                      required></textarea>
+                        </div>
+
+                        <p id="adminMensajeMantenimiento"
+                           class="admin-error"
+                           role="alert"></p>
+
+                        <div class="admin-botones">
+                            <button type="submit"
+                                    class="btn-admin-amarillo">
+                                GUARDAR MANTENIMIENTO
+                            </button>
+
+                            <button type="button"
+                                    id="cancelarEdicionCita"
+                                    class="btn-admin-gris">
+                                CANCELAR
+                            </button>
+                        </div>
+
+                    </form>
+
+                </div>
+
+                <!-- TABLA DE MANTENIMIENTOS -->
+                <div class="admin-tarjeta">
+
+                    <h3>Listado de solicitudes</h3>
+
+                    <div class="admin-tabla-contenedor">
+
+                        <table class="admin-tabla">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Cliente</th>
+                                    <th>Placa</th>
+                                    <th>Servicio</th>
+                                    <th>Fecha</th>
+                                    <th>Estado</th>
+                                    <th>Acciones</th>
+                                </tr>
+                            </thead>
+
+                            <tbody id="tablaAdminCitas"></tbody>
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- ==================================
+                 CRUD DE REPUESTOS
+            =================================== -->
+            <section id="adminInventario"
+                     class="admin-vista oculto">
+
+                <div class="admin-titulo">
+                    <span>INVENTARIO AUTOTECH</span>
+                    <h2>Gestión de repuestos</h2>
+                    <p>
+                        Crea, consulta, actualiza y elimina
+                        productos del inventario.
+                    </p>
+                </div>
+
+                <div class="admin-tarjeta">
+
+                    <h3 id="tituloFormularioProducto">
+                        Registrar nuevo repuesto
+                    </h3>
+
+                    <form id="formAdminProducto" novalidate>
+
+                        <input type="hidden"
+                               id="adminProductoId">
+
+                        <div class="admin-form-grid">
+
+                            <div class="admin-campo">
+                                <label for="adminProductoNombre">
+                                    Nombre del repuesto *
+                                </label>
+
+                                <input type="text"
+                                       id="adminProductoNombre"
+                                       required>
+                            </div>
+
+                            <div class="admin-campo">
+                                <label for="adminProductoCategoria">
+                                    Categoría *
+                                </label>
+
+                                <select id="adminProductoCategoria" required>
+                                    <option value="">Seleccionar</option>
+                                    <option>Motor</option>
+                                    <option>Frenos</option>
+                                    <option>Filtros</option>
+                                    <option>Baterías</option>
+                                    <option>Suspensión</option>
+                                    <option>Accesorios</option>
+                                </select>
+                            </div>
+
+                            <div class="admin-campo">
+                                <label for="adminProductoPrecio">
+                                    Precio en dólares *
+                                </label>
+
+                                <input type="number"
+                                       id="adminProductoPrecio"
+                                       min="0.01"
+                                       step="0.01"
+                                       placeholder="0.00"
+                                       required>
+                            </div>
+
+                            <div class="admin-campo">
+                                <label for="adminProductoStock">
+                                    Cantidad disponible *
+                                </label>
+
+                                <input type="number"
+                                       id="adminProductoStock"
+                                       min="0"
+                                       step="1"
+                                       required>
+                            </div>
+
+                        </div>
+
+                        <div class="admin-campo">
+                            <label for="adminProductoImagen">
+                                Ruta de imagen
+                            </label>
+
+                            <input type="text"
+                                   id="adminProductoImagen"
+                                   placeholder="assets/img/repuesto.jpg">
+                        </div>
+
+                        <p id="adminMensajeProducto"
+                           class="admin-error"
+                           role="alert"></p>
+
+                        <div class="admin-botones">
+                            <button type="submit"
+                                    class="btn-admin-amarillo">
+                                GUARDAR REPUESTO
+                            </button>
+
+                            <button type="button"
+                                    id="cancelarEdicionProductoAdmin"
+                                    class="btn-admin-gris">
+                                CANCELAR
+                            </button>
+                        </div>
+
+                    </form>
+
+                </div>
+
+                <div class="admin-tarjeta">
+
+                    <h3>Inventario actual</h3>
+
+                    <div class="admin-tabla-contenedor">
+
+                        <table class="admin-tabla">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Repuesto</th>
+                                    <th>Categoría</th>
+                                    <th>Precio</th>
+                                    <th>Stock</th>
+                                    <th>Acciones</th>
+                                </tr>
+                            </thead>
+
+                            <tbody id="tablaAdminProductos"></tbody>
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- ==================================
+                 PEDIDOS DE CLIENTES
+            =================================== -->
+            <section id="adminPedidos"
+                     class="admin-vista oculto">
+
+                <div class="admin-titulo">
+                    <span>GESTIÓN COMERCIAL</span>
+                    <h2>Pedidos de clientes</h2>
+                    <p>
+                        Consulta las solicitudes de compra
+                        y actualiza sus estados.
+                    </p>
+                </div>
+
+                <div class="admin-tarjeta">
+
+                    <h3>Todos los pedidos</h3>
+
+                    <div class="admin-tabla-contenedor">
+
+                        <table class="admin-tabla">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Cliente</th>
+                                    <th>Fecha</th>
+                                    <th>Productos</th>
+                                    <th>Total</th>
+                                    <th>Estado</th>
+                                    <th>Acción</th>
+                                </tr>
+                            </thead>
+
+                            <tbody id="tablaAdminPedidos"></tbody>
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- ==================================
+                 HISTORIAL DE AUDITORÍA
+            =================================== -->
+            <section id="adminAuditoria"
+                     class="admin-vista oculto">
+
+                <div class="admin-titulo">
+                    <span>CONTROL ADMINISTRATIVO</span>
+                    <h2>Historial de auditoría</h2>
+                    <p>
+                        Registro de las acciones realizadas
+                        por los administradores.
+                    </p>
+                </div>
+
+                <div class="admin-tarjeta">
+
+                    <h3>Registro de actividades</h3>
+
+                    <div class="admin-tabla-contenedor">
+
+                        <table class="admin-tabla">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Fecha y hora</th>
+                                    <th>Administrador</th>
+                                    <th>Acción</th>
+                                </tr>
+                            </thead>
+
+                            <tbody id="tablaAdminLogs"></tbody>
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+</div>
+
+<!-- Ventanas de confirmación -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<!-- Conexión con JavaScript -->
+<script src="script.js"></script>
+
+</body>
+</html>

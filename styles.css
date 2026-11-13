@@ -1,0 +1,1629 @@
+
+/* =========================================
+   AUTOTECH - ESTILOS GENERALES
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f3f5f7;
+    color: #202832;
+}
+
+/* =========================================
+   MENÚ PRINCIPAL
+========================================= */
+
+header {
+    background-color: #202832;
+    padding: 0 6%;
+}
+
+nav {
+    min-height: 85px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 25px;
+}
+
+nav h1 {
+    color: #ffffff;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #f5c400;
+}
+
+#btnLogin {
+    background-color: #f5c400;
+    color: #111111;
+    padding: 15px 25px;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#btnLogin:hover {
+    background-color: #e0b100;
+    transform: translateY(-2px);
+}
+
+/* =========================================
+   PORTADA PRINCIPAL
+========================================= */
+
+#inicio {
+    min-height: 85vh;
+
+    background-image:
+        linear-gradient(
+            90deg,
+            rgba(4, 16, 30, 0.88),
+            rgba(4, 16, 30, 0.35)
+        ),
+        url("assets/img/taller-principal.jpg");
+
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+
+    padding: 90px 10%;
+    color: white;
+}
+
+#inicio h2 {
+    font-size: 28px;
+    color: #f5c400;
+    margin-bottom: 20px;
+}
+
+#inicio h3 {
+    font-size: clamp(36px, 5vw, 65px);
+    max-width: 800px;
+    font-weight: bold;
+    text-transform: uppercase;
+    line-height: 1.15;
+    margin-bottom: 25px;
+}
+
+#inicio p {
+    font-size: 19px;
+    max-width: 650px;
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
+
+#btnAgendar {
+    background-color: #f5c400;
+    color: #111111;
+    border: none;
+    padding: 18px 35px;
+    border-radius: 4px;
+    font-size: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#btnAgendar:hover {
+    background-color: #ffffff;
+    transform: translateY(-3px);
+}
+
+/* =========================================
+   SERVICIOS
+========================================= */
+
+#servicios {
+    padding: 90px 8%;
+    text-align: center;
+    background-color: #f3f5f7;
+}
+
+#servicios h2 {
+    font-size: 38px;
+    text-transform: uppercase;
+    margin-bottom: 45px;
+    color: #092b4d;
+}
+
+#servicios article {
+    display: inline-block;
+    vertical-align: top;
+    width: 29%;
+    min-height: 190px;
+    margin: 1%;
+    padding: 35px 22px;
+
+    background-color: white;
+    border-top: 5px solid #f5c400;
+    border-radius: 6px;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    transition: 0.3s;
+}
+
+#servicios article:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+#servicios article h3 {
+    color: #092b4d;
+    font-size: 22px;
+    margin-bottom: 18px;
+}
+
+#servicios article p {
+    color: #555555;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* =========================================
+   REPUESTOS
+========================================= */
+
+#repuestos {
+    padding: 100px 8%;
+    text-align: center;
+    background-color: #092b4d;
+    color: white;
+}
+
+#repuestos h2 {
+    font-size: 38px;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+}
+
+#repuestos p {
+    font-size: 18px;
+    color: #e1e6ed;
+    line-height: 1.7;
+}
+
+/* =========================================
+   CONTACTO
+========================================= */
+
+#contacto {
+    padding: 90px 8%;
+    text-align: center;
+    background-color: #ffffff;
+}
+
+#contacto h2 {
+    color: #092b4d;
+    font-size: 36px;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+}
+
+#contacto p {
+    font-size: 18px;
+    color: #555555;
+}
+
+/* =========================================
+   PIE DE PÁGINA
+========================================= */
+
+footer {
+    background-color: #202832;
+    color: white;
+    text-align: center;
+    padding: 35px 20px;
+    font-size: 14px;
+}
+
+/* =========================================
+   DISEÑO RESPONSIVE
+========================================= */
+
+@media (max-width: 900px) {
+
+    nav {
+        flex-direction: column;
+        padding: 20px 0;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    #inicio {
+        min-height: 75vh;
+        padding: 70px 6%;
+    }
+
+    #inicio h3 {
+        font-size: 40px;
+    }
+
+    #servicios article {
+        width: 45%;
+    }
+}
+
+@media (max-width: 600px) {
+
+    nav h1 {
+        font-size: 26px;
+    }
+
+    nav ul {
+        gap: 12px;
+    }
+
+    nav ul li a {
+        font-size: 12px;
+    }
+
+    #inicio h2 {
+        font-size: 21px;
+    }
+
+    #inicio h3 {
+        font-size: 32px;
+    }
+
+    #inicio p {
+        font-size: 16px;
+    }
+
+    #servicios h2,
+    #repuestos h2,
+    #contacto h2 {
+        font-size: 28px;
+    }
+
+    #servicios article {
+        display: block;
+        width: 100%;
+        margin: 20px 0;
+    }
+}
+
+/* =========================================
+   PASO 3 - VENTANAS DE AUTENTICACIÓN
+========================================= */
+
+.oculto {
+    display: none !important;
+}
+
+body.modal-abierto {
+    overflow: hidden;
+}
+
+/* Fondo oscuro detrás del formulario */
+.modal-autotech {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.78);
+    backdrop-filter: blur(5px);
+    z-index: 1000;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+    overflow-y: auto;
+}
+
+/* Caja del formulario */
+.modal-caja {
+    background: #142235;
+    color: #ffffff;
+    width: 100%;
+    max-width: 440px;
+    padding: 35px;
+    border-radius: 12px;
+    border: 1px solid #34445b;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    position: relative;
+    margin: auto;
+}
+
+/* Botón cerrar */
+.cerrar-modal {
+    position: absolute;
+    right: 20px;
+    top: 15px;
+
+    background: transparent;
+    border: none;
+    color: #ffffff;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.cerrar-modal:hover {
+    color: #f5c400;
+}
+
+/* Logo */
+.modal-logo {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.modal-logo h2 {
+    font-size: 32px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.modal-logo h2 span {
+    color: #f5c400;
+}
+
+.modal-logo p {
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: #b4c2d3;
+    margin-top: 5px;
+}
+
+/* Títulos */
+.modal-caja h3 {
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.modal-descripcion {
+    text-align: center;
+    color: #b4c2d3;
+    font-size: 14px;
+    margin-bottom: 30px;
+}
+
+/* Campos */
+.campo-formulario {
+    margin-bottom: 18px;
+}
+
+.campo-formulario label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+    color: #e0e7ef;
+}
+
+.campo-formulario input {
+    width: 100%;
+    padding: 14px 15px;
+    border-radius: 6px;
+    border: 1px solid #40536b;
+
+    background-color: #0c1929;
+    color: #ffffff;
+    font-size: 15px;
+    outline: none;
+
+    transition: 0.3s;
+}
+
+.campo-formulario input::placeholder {
+    color: #8292a5;
+}
+
+.campo-formulario input:focus {
+    border-color: #f5c400;
+    box-shadow: 0 0 0 3px rgba(245, 196, 0, 0.13);
+}
+
+/* Mensajes */
+.mensaje-error {
+    color: #ff7c7c;
+    font-size: 13px;
+    margin-bottom: 14px;
+    min-height: 18px;
+    text-align: center;
+}
+
+/* Botón amarillo */
+.boton-formulario {
+    width: 100%;
+    background: #f5c400;
+    color: #111111;
+
+    padding: 15px;
+    border: none;
+    border-radius: 6px;
+
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.boton-formulario:hover {
+    background: #ffe04d;
+    transform: translateY(-2px);
+}
+
+/* Registro */
+.modal-pie {
+    text-align: center;
+    margin-top: 25px;
+    font-size: 14px;
+}
+
+.modal-pie p {
+    color: #b4c2d3;
+    margin-bottom: 7px;
+}
+
+.modal-pie button {
+    background: none;
+    border: none;
+    color: #f5c400;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.modal-pie button:hover {
+    text-decoration: underline;
+}
+
+/* =========================================
+   VISTA TEMPORAL SEGÚN EL ROL
+========================================= */
+
+.pantalla-bienvenida {
+    position: fixed;
+    inset: 0;
+    z-index: 900;
+
+    background: #0c1929;
+    color: #ffffff;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.bienvenida-caja {
+    width: 100%;
+    max-width: 600px;
+    padding: 40px;
+    border-radius: 12px;
+    background: #17283c;
+    text-align: center;
+    margin: auto;
+}
+
+.bienvenida-caja h2 {
+    margin-bottom: 15px;
+}
+
+.bienvenida-caja > p {
+    color: #ccd6e2;
+    line-height: 1.7;
+}
+
+.opciones-bienvenida {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin: 25px 0;
+}
+
+.opcion-rol {
+    background: #233a54;
+    color: #ffffff;
+    padding: 18px;
+    border-radius: 7px;
+    border-left: 4px solid #f5c400;
+    font-size: 14px;
+}
+
+/* Dispositivos móviles */
+@media (max-width: 600px) {
+
+    .modal-caja {
+        padding: 25px 20px;
+    }
+
+    .modal-logo h2 {
+        font-size: 27px;
+    }
+
+    .modal-caja h3 {
+        font-size: 21px;
+    }
+
+    .bienvenida-caja {
+        padding: 25px 18px;
+    }
+
+    .opciones-bienvenida {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* ==========================================
+   PASO 4 - PANEL DEL CLIENTE
+========================================== */
+
+.panel-cliente {
+    position: fixed;
+    inset: 0;
+    z-index: 800;
+    background: #f0f3f7;
+    overflow-y: auto;
+}
+
+/* BARRA SUPERIOR */
+
+.cliente-header {
+    background: #142235;
+    color: white;
+    padding: 20px 35px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.cliente-marca {
+    font-size: 26px;
+    font-weight: bold;
+}
+
+.cliente-marca span {
+    color: #f5c400;
+}
+
+.cliente-marca small {
+    display: block;
+    font-size: 11px;
+    font-weight: normal;
+    letter-spacing: 2px;
+    margin-top: 4px;
+}
+
+.btn-salir-cliente {
+    background: transparent;
+    border: 1px solid #f5c400;
+    color: #f5c400;
+    padding: 12px 18px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-salir-cliente:hover {
+    background: #f5c400;
+    color: #142235;
+}
+
+/* DISTRIBUCIÓN DEL PANEL */
+
+.cliente-layout {
+    display: grid;
+    grid-template-columns: 250px minmax(0, 1fr);
+    min-height: calc(100vh - 92px);
+}
+
+/* MENÚ LATERAL */
+
+.cliente-sidebar {
+    background: #1b2d43;
+    padding: 35px 15px;
+}
+
+.cliente-sidebar h3 {
+    color: #aebed0;
+    font-size: 13px;
+    margin: 0 15px 25px;
+    letter-spacing: 2px;
+}
+
+.cliente-menu-btn {
+    width: 100%;
+    background: transparent;
+    border: none;
+    color: #d9e3ed;
+    padding: 16px 15px;
+    margin-bottom: 8px;
+    text-align: left;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+.cliente-menu-btn:hover {
+    background: #30475f;
+}
+
+.cliente-menu-btn.activo {
+    background: #f5c400;
+    color: #142235;
+    font-weight: bold;
+}
+
+/* CONTENIDO */
+
+.cliente-contenido {
+    padding: 40px;
+    min-width: 0;
+}
+
+.cliente-titulo {
+    margin-bottom: 30px;
+}
+
+.cliente-titulo span {
+    color: #bf9000;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.cliente-titulo h2 {
+    color: #142235;
+    font-size: 32px;
+    margin: 10px 0;
+}
+
+.cliente-titulo p {
+    color: #64748b;
+    line-height: 1.6;
+}
+
+/* TARJETAS */
+
+.cliente-tarjeta {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    margin-bottom: 25px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+    border: 1px solid #e3e8ef;
+}
+
+.cliente-tarjeta h3 {
+    font-size: 21px;
+    color: #142235;
+    padding-bottom: 15px;
+    margin-bottom: 25px;
+    border-bottom: 2px solid #f5c400;
+}
+
+/* DATOS DEL PERFIL */
+
+.cliente-datos-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 25px;
+}
+
+.cliente-dato label {
+    display: block;
+    font-size: 13px;
+    color: #718096;
+    margin-bottom: 8px;
+}
+
+.cliente-dato p {
+    color: #142235;
+    font-size: 16px;
+    font-weight: bold;
+    overflow-wrap: anywhere;
+}
+
+.cliente-acceso-rapido p {
+    color: #64748b;
+    margin-bottom: 25px;
+}
+
+/* FORMULARIO DE CITAS */
+
+.cliente-form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.cliente-campo {
+    margin-bottom: 20px;
+}
+
+.cliente-campo label {
+    display: block;
+    color: #263c55;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 9px;
+}
+
+.cliente-campo input,
+.cliente-campo select,
+.cliente-campo textarea {
+    width: 100%;
+    padding: 13px 14px;
+    background: #f8fafc;
+    color: #142235;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 15px;
+    font-family: inherit;
+}
+
+.cliente-campo input:focus,
+.cliente-campo select:focus,
+.cliente-campo textarea:focus {
+    outline: none;
+    border-color: #f5c400;
+    box-shadow: 0 0 0 3px rgba(245, 196, 0, 0.15);
+}
+
+.cliente-campo textarea {
+    resize: vertical;
+    min-height: 110px;
+}
+
+.cliente-opciones {
+    margin: 15px 0 25px;
+}
+
+.cliente-opciones > label {
+    display: block;
+    font-size: 14px;
+    font-weight: bold;
+    color: #263c55;
+    margin-bottom: 12px;
+}
+
+.cliente-opcion {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 10px 0;
+}
+
+.cliente-opcion input {
+    accent-color: #c99d00;
+    width: 17px;
+    height: 17px;
+}
+
+.cliente-opcion label {
+    color: #334155;
+    cursor: pointer;
+}
+
+.btn-cliente-amarillo {
+    background: #f5c400;
+    color: #142235;
+    padding: 15px 25px;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-cliente-amarillo:hover {
+    background: #ffe057;
+    transform: translateY(-2px);
+}
+
+.cliente-error {
+    color: #c62828;
+    font-size: 14px;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+/* TABLA DE MANTENIMIENTOS */
+
+.cliente-tabla-contenedor {
+    overflow-x: auto;
+}
+
+.cliente-tabla {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 650px;
+}
+
+.cliente-tabla th {
+    background: #142235;
+    color: #ffffff;
+    padding: 15px;
+    text-align: left;
+    font-size: 13px;
+}
+
+.cliente-tabla td {
+    padding: 15px;
+    border-bottom: 1px solid #e2e8f0;
+    font-size: 14px;
+    color: #334155;
+}
+
+.cliente-tabla tr:hover td {
+    background: #f8fafc;
+}
+
+.cliente-estado {
+    display: inline-block;
+    background: #fff4c2;
+    color: #765700;
+    padding: 6px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+    .cliente-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .cliente-sidebar {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        padding: 15px;
+    }
+
+    .cliente-sidebar h3 {
+        width: 100%;
+        margin-bottom: 5px;
+    }
+
+    .cliente-menu-btn {
+        width: auto;
+        margin: 0;
+    }
+
+    .cliente-contenido {
+        padding: 25px;
+    }
+}
+
+@media (max-width: 600px) {
+    .cliente-header {
+        padding: 18px;
+        flex-wrap: wrap;
+    }
+
+    .cliente-marca {
+        font-size: 22px;
+    }
+
+    .cliente-contenido {
+        padding: 18px;
+    }
+
+    .cliente-tarjeta {
+        padding: 20px;
+    }
+
+    .cliente-form-grid,
+    .cliente-datos-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cliente-titulo h2 {
+        font-size: 26px;
+    }
+}
+
+
+/* ==========================================
+   PASO 4.2 - TIENDA DE REPUESTOS
+========================================== */
+
+.tienda-barra {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.tienda-barra input {
+    flex: 1;
+    min-width: 0;
+    padding: 15px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    background: #ffffff;
+    font-size: 15px;
+}
+
+.tienda-barra input:focus {
+    outline: none;
+    border-color: #f5c400;
+}
+
+.repuestos-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.repuesto-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.06);
+    transition: 0.3s;
+}
+
+.repuesto-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12);
+}
+
+.repuesto-imagen {
+    width: 100%;
+    height: 190px;
+    object-fit: contain;
+    background: #edf1f5;
+    padding: 15px;
+}
+
+.repuesto-info {
+    padding: 22px;
+}
+
+.repuesto-categoria {
+    color: #a27a00;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.repuesto-info h3 {
+    color: #142235;
+    font-size: 19px;
+    margin: 10px 0;
+    padding: 0;
+    border: none;
+}
+
+.repuesto-precio {
+    font-size: 24px;
+    font-weight: bold;
+    color: #092b4d;
+    margin: 12px 0;
+}
+
+.repuesto-stock {
+    font-size: 13px;
+    color: #475569;
+    margin-bottom: 18px;
+}
+
+.repuesto-info button {
+    width: 100%;
+}
+
+.repuesto-info button:disabled,
+#confirmarPedido:disabled {
+    background: #cbd5e1;
+    color: #64748b;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.mensaje-vacio {
+    grid-column: 1 / -1;
+    padding: 35px;
+    background: white;
+    border-radius: 8px;
+    text-align: center;
+    color: #64748b;
+}
+
+/* ==========================================
+   CARRITO DE COMPRAS
+========================================== */
+
+.carrito-cantidad {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.carrito-cantidad button {
+    background: #142235;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    padding: 7px 12px;
+    cursor: pointer;
+}
+
+.carrito-cantidad span {
+    font-weight: bold;
+    min-width: 20px;
+    text-align: center;
+}
+
+.carrito-eliminar {
+    background: #b91c1c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 9px 12px;
+    cursor: pointer;
+}
+
+.carrito-eliminar:hover {
+    background: #991b1b;
+}
+
+.carrito-resumen {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 25px;
+    margin-top: 25px;
+}
+
+.carrito-resumen h3 {
+    margin: 0;
+    border: none;
+    padding: 0;
+    font-size: 24px;
+}
+
+@media (max-width: 1100px) {
+    .repuestos-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 650px) {
+    .repuestos-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .tienda-barra {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .carrito-resumen {
+        justify-content: center;
+    }
+}
+
+/* ==========================================
+   PASO 5 - PANEL DEL ADMINISTRADOR
+========================================== */
+
+.panel-admin {
+    position: fixed;
+    inset: 0;
+    z-index: 850;
+    background: #eff3f8;
+    overflow-y: auto;
+}
+
+/* BARRA SUPERIOR */
+
+.admin-header {
+    background: #101d2e;
+    color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 20px 30px;
+}
+
+.admin-marca {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.admin-marca span {
+    color: #f5c400;
+}
+
+.admin-marca small {
+    display: block;
+    font-size: 11px;
+    font-weight: normal;
+    letter-spacing: 2px;
+    margin-top: 5px;
+}
+
+.admin-header-derecha {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+}
+
+#nombreAdministrador {
+    color: #d3e0ed;
+    font-size: 14px;
+}
+
+.btn-admin-salir {
+    background: transparent;
+    border: 1px solid #f5c400;
+    color: #f5c400;
+    border-radius: 6px;
+    padding: 11px 18px;
+    cursor: pointer;
+}
+
+.btn-admin-salir:hover {
+    background: #f5c400;
+    color: #101d2e;
+}
+
+/* DISTRIBUCIÓN */
+
+.admin-layout {
+    display: grid;
+    grid-template-columns: 250px minmax(0, 1fr);
+    min-height: calc(100vh - 85px);
+}
+
+/* MENÚ LATERAL */
+
+.admin-sidebar {
+    background: #1b2d43;
+    padding: 35px 15px;
+}
+
+.admin-sidebar h3 {
+    font-size: 12px;
+    letter-spacing: 2px;
+    color: #adbdcf;
+    margin: 0 15px 25px;
+}
+
+.admin-menu-btn {
+    display: block;
+    width: 100%;
+    text-align: left;
+    background: transparent;
+    color: #dce6f0;
+    border: none;
+    border-radius: 6px;
+    padding: 16px 13px;
+    margin-bottom: 8px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.admin-menu-btn:hover {
+    background: #344c67;
+}
+
+.admin-menu-btn.activo {
+    background: #f5c400;
+    color: #142235;
+    font-weight: bold;
+}
+
+/* CONTENIDO */
+
+.admin-contenido {
+    padding: 35px;
+    min-width: 0;
+}
+
+.admin-titulo {
+    margin-bottom: 28px;
+}
+
+.admin-titulo span {
+    display: block;
+    color: #b18a00;
+    font-size: 12px;
+    letter-spacing: 2px;
+    font-weight: bold;
+}
+
+.admin-titulo h2 {
+    color: #142235;
+    font-size: 30px;
+    margin: 10px 0;
+}
+
+.admin-titulo p {
+    color: #64748b;
+    line-height: 1.6;
+}
+
+/* ESTADÍSTICAS */
+
+.admin-estadisticas {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 18px;
+    margin-bottom: 25px;
+}
+
+.admin-stat {
+    background: #172a41;
+    border-radius: 10px;
+    color: #ffffff;
+    padding: 25px;
+    border-bottom: 4px solid #f5c400;
+}
+
+.stat-icono {
+    font-size: 27px;
+    margin-bottom: 12px;
+}
+
+.admin-stat p {
+    font-size: 13px;
+    color: #c6d4e3;
+    margin-bottom: 10px;
+}
+
+.admin-stat h3 {
+    font-size: 34px;
+    font-weight: bold;
+    color: #f5c400;
+}
+
+/* TARJETAS */
+
+.admin-tarjeta {
+    background: #ffffff;
+    padding: 28px;
+    border-radius: 10px;
+    margin-bottom: 25px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+}
+
+.admin-tarjeta h3 {
+    font-size: 21px;
+    color: #142235;
+    margin-bottom: 23px;
+    padding-bottom: 14px;
+    border-bottom: 2px solid #f5c400;
+}
+
+.admin-resumen {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 15px;
+}
+
+.admin-resumen > div {
+    background: #f1f5f9;
+    border-radius: 8px;
+    padding: 20px;
+}
+
+.admin-resumen span {
+    display: block;
+    color: #475569;
+    font-size: 13px;
+    margin-bottom: 12px;
+}
+
+.admin-resumen strong {
+    font-size: 29px;
+    color: #142235;
+}
+
+/* FORMULARIOS */
+
+.admin-form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.admin-campo {
+    margin-bottom: 20px;
+}
+
+.admin-campo label {
+    display: block;
+    color: #263c55;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 9px;
+}
+
+.admin-campo input,
+.admin-campo select,
+.admin-campo textarea {
+    width: 100%;
+    padding: 13px 14px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    background: #f8fafc;
+    color: #142235;
+    font-family: inherit;
+    font-size: 15px;
+}
+
+.admin-campo input:focus,
+.admin-campo select:focus,
+.admin-campo textarea:focus {
+    outline: none;
+    border-color: #f5c400;
+    box-shadow: 0 0 0 3px rgba(245, 196, 0, 0.15);
+}
+
+.admin-campo textarea {
+    resize: vertical;
+}
+
+.admin-error {
+    color: #b91c1c;
+    font-weight: bold;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.admin-botones {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.btn-admin-amarillo {
+    background: #f5c400;
+    color: #142235;
+    border: none;
+    border-radius: 5px;
+    padding: 13px 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn-admin-amarillo:hover {
+    background: #ffdb38;
+}
+
+.btn-admin-gris {
+    background: #e2e8f0;
+    color: #142235;
+    border: none;
+    border-radius: 5px;
+    padding: 13px 20px;
+    cursor: pointer;
+}
+
+.btn-admin-gris:hover {
+    background: #cbd5e1;
+}
+
+/* TABLAS */
+
+.admin-tabla-contenedor {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.admin-tabla {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 850px;
+}
+
+.admin-tabla thead {
+    background: #142235;
+    color: white;
+}
+
+.admin-tabla th {
+    padding: 15px;
+    font-size: 13px;
+    text-align: left;
+}
+
+.admin-tabla td {
+    padding: 14px;
+    font-size: 13px;
+    color: #334155;
+    border-bottom: 1px solid #e2e8f0;
+    vertical-align: middle;
+}
+
+.admin-tabla tbody tr:hover {
+    background: #f8fafc;
+}
+
+.admin-tabla td button {
+    margin: 3px;
+}
+
+.admin-tabla select {
+    padding: 8px;
+    max-width: 165px;
+    border: 1px solid #cbd5e1;
+    border-radius: 5px;
+    background: white;
+    color: #142235;
+}
+
+/* BOTONES DE LA TABLA */
+
+.admin-btn-editar {
+    background: #0b5b9a;
+    color: white;
+    border: none;
+    padding: 9px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.admin-btn-editar:hover {
+    background: #084675;
+}
+
+.admin-btn-eliminar {
+    background: #bb2525;
+    color: white;
+    border: none;
+    padding: 9px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.admin-btn-eliminar:hover {
+    background: #981b1b;
+}
+
+.admin-btn-guardar {
+    background: #14804a;
+    color: white;
+    border: none;
+    padding: 9px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.admin-btn-guardar:hover {
+    background: #10683c;
+}
+
+/* ETIQUETAS DE ESTADO */
+
+.admin-estado {
+    display: inline-block;
+    padding: 6px 10px;
+    border-radius: 5px;
+    background: #fff1bd;
+    color: #775700;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.admin-estado.proceso {
+    background: #dbeafe;
+    color: #1e40af;
+}
+
+.admin-estado.finalizado {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.admin-estado.cancelado {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+/* DISEÑO RESPONSIVE */
+
+@media (max-width: 1150px) {
+    .admin-estadisticas {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 900px) {
+    .admin-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .admin-sidebar {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        padding: 16px;
+    }
+
+    .admin-sidebar h3 {
+        width: 100%;
+        margin-bottom: 5px;
+    }
+
+    .admin-menu-btn {
+        width: auto;
+        margin: 0;
+    }
+}
+
+@media (max-width: 650px) {
+    .admin-header {
+        padding: 18px;
+    }
+
+    .admin-header-derecha {
+        flex-wrap: wrap;
+    }
+
+    .admin-contenido {
+        padding: 18px;
+    }
+
+    .admin-tarjeta {
+        padding: 18px;
+    }
+
+    .admin-estadisticas,
+    .admin-resumen,
+    .admin-form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .admin-titulo h2 {
+        font-size: 25px;
+    }
+}
